@@ -5,11 +5,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DbConnection {
-    private final String dbname = "library_managment";
-    private final String username = "mitsoa";
-    private final String password = "0346170000";
-    private final String host = "localhost";
-    private final int port = 5432;
+    private final String dbname = System.getenv("DB_NAME");
+    private final String username = System.getenv("USERNAME");
+    private final String password = System.getenv("PASSWORD");
+    private final String host = System.getenv("HOST");
+    private final int port = Integer.parseInt(System.getenv("PORT"));
     private final String url;
 
     public DbConnection(){
